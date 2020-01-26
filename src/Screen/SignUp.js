@@ -4,8 +4,9 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, TextInput, ScrollView 
 import constants from 'jest-haste-map/build/constants';
 import { color } from 'react-native-reanimated';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+// import CalendarPicker from 'react-native-calendar-picker';
 // create a component55823
-class Root extends Component {
+class SignUp extends Component {
     static navigationOptions = {
         header: null,
     }
@@ -126,5 +127,5 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default Root;
+export default SignUp;
 

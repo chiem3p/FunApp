@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MonkeyappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MonkeyappTests.m */; };
+		03EC449E23DD820300BFE530 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 03EC449D23DD820300BFE530 /* libRNGestureHandler.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		24C6067A0041FB91D70AB537 /* libPods-Monkeyapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A855FEFEB266E7C25AB1C14E /* libPods-Monkeyapp.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* MonkeyappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MonkeyappTests.m */; };
 		2FC529AA32722F43C4B1E11C /* libPods-Monkeyapp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F534C0420B42241F63FE135 /* libPods-Monkeyapp-tvOSTests.a */; };
-		61B7257E98BA8B402B0B80A7 /* libPods-Monkeyapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A855FEFEB266E7C25AB1C14E /* libPods-Monkeyapp.a */; };
 		76DD5A8E10A094218AC3FA54 /* libPods-Monkeyapp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C4EC3D603CC7DFB4FA0CF2 /* libPods-Monkeyapp-tvOS.a */; };
-		9004141B23DD4B7F00CF599F /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9004141A23DD4B7F00CF599F /* libRNGestureHandler.a */; };
 		A16D7BAB82EE969B2DFDCA08 /* libPods-MonkeyappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D2210FF66480CAA78301FD /* libPods-MonkeyappTests.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +45,8 @@
 		00E356EE1AD99517003FC87E /* MonkeyappTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonkeyappTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MonkeyappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonkeyappTests.m; sourceTree = "<group>"; };
+		03A789A223DD8008007D0C4D /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		03EC449D23DD820300BFE530 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B25D09A7FB0214FF455A01 /* Pods-Monkeyapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monkeyapp.release.xcconfig"; path = "Target Support Files/Pods-Monkeyapp/Pods-Monkeyapp.release.xcconfig"; sourceTree = "<group>"; };
 		0F534C0420B42241F63FE135 /* libPods-Monkeyapp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Monkeyapp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1376A7B13AB415B562B48E88 /* Pods-Monkeyapp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monkeyapp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Monkeyapp-tvOSTests/Pods-Monkeyapp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,8 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9004141B23DD4B7F00CF599F /* libRNGestureHandler.a in Frameworks */,
-				61B7257E98BA8B402B0B80A7 /* libPods-Monkeyapp.a in Frameworks */,
+				03EC449E23DD820300BFE530 /* libRNGestureHandler.a in Frameworks */,
+				24C6067A0041FB91D70AB537 /* libPods-Monkeyapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +160,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03EC449D23DD820300BFE530 /* libRNGestureHandler.a */,
+				03A789A223DD8008007D0C4D /* libRNGestureHandler.a */,
 				9004141A23DD4B7F00CF599F /* libRNGestureHandler.a */,
 				90E4F34623D5E59400E0DEC5 /* libRNGestureHandler.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
