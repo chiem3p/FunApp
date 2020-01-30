@@ -20,7 +20,7 @@ class Root extends Component {
     headerTitleStyle: {
       fontWeight: "bold",
       fontSize: 29,
-left:-142,
+      // left: -142
     },
     headerStyle: {
       backgroundColor: "green"
@@ -33,6 +33,15 @@ left:-142,
         {/* <Image style={styles.backgroundImage} source={require('../Image/background.png')}  /> */}
         <View style={styles.headerRoot}>
           {/* <Text style={styles.textTitle}>Sign Up <Text style={styles.textTitle1}>App</Text></Text> */}
+          <View style={styles.inputBody}>
+            <TouchableOpacity
+              style={styles.buttonSignUp}
+              onPress={() => this.props.navigation.navigate("Account_Setting")}
+              
+            >
+              <Text style={styles.textButton}>Account settings</Text>
+            </TouchableOpacity>
+          </View>
           <View style={styles.inputBody}>
             <TouchableOpacity
               style={styles.buttonSignUp}
@@ -49,22 +58,6 @@ left:-142,
               <Text style={styles.textButton}>Sign Up</Text>
             </TouchableOpacity>
           </View>
-          {/* <View style={styles.inputBody}>
-            <TouchableOpacity
-              style={styles.buttonSignUp}
-              onPress={() => this.props.navigation.navigate("Main")}
-            >
-              <Text style={styles.textButton}>Sign Up</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.inputBody}>
-            <TouchableOpacity
-              style={styles.buttonSignUp}
-              onPress={() => this.props.navigation.navigate("Main")}
-            >
-              <Text style={styles.textButton}>Sign Up</Text>
-            </TouchableOpacity>
-          </View> */}
           <View style={styles.inputBody}>
             <TouchableOpacity
               style={styles.buttonSignUp}
@@ -73,7 +66,7 @@ left:-142,
               <Text style={styles.textButton}>Logout</Text>
             </TouchableOpacity>
           </View>
-          </View>
+        </View>
         <View style={styles.footerRoot}></View>
       </View>
     );
@@ -89,7 +82,7 @@ const styles = StyleSheet.create({
   },
 
   headerRoot: {
-    flex: 0.8,
+    flex: 0.8
   },
   inputBody: {
     borderBottomWidth: 1,
@@ -97,7 +90,7 @@ const styles = StyleSheet.create({
     height: 55,
     borderColor: "white",
     justifyContent: "center",
-left:30,
+    left: 30
   },
   textButton: {
     // justifyContent: "center",

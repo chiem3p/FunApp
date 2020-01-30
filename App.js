@@ -13,20 +13,26 @@ import Home from "./src/Screen/Home";
 import Notification from "./src/Screen/Notification";
 import Friend from "./src/Screen/Friend";
 import More from "./src/Screen/More";
+import Account_Setting from "./src/Screen/Account_Setting";
+import MyProfile from "./src/Screen/My_Profile";
 const HomePage = createStackNavigator({
   Home: { screen: Home }
 });
 const friend = createStackNavigator({
   Friend: { screen: Friend }
 });
-const fotification = createStackNavigator({
+const notification = createStackNavigator({
   Notification: { screen: Notification }
 });
+// const Profile = createStackNavigator({
+
+//   Account_Setting: { screen: Account_Setting },
+//   MyProfile: { screen: MyProfile }
+// });
 const more = createStackNavigator({
-  More: {
-    screen: More,
-    
-  }
+  more: { screen: More },
+  Account_Setting: { screen: Account_Setting },
+  MyProfile: { screen: MyProfile }
 });
 const RootHome = createStackNavigator({
   Root: { screen: Root },
@@ -36,14 +42,15 @@ const RootHome = createStackNavigator({
 const TabNavigator = createBottomTabNavigator({
   Home: { screen: HomePage },
   Friend: { screen: friend },
-  Notification: { screen: fotification },
-  More: { screen: more ,
+  Notification: { screen: notification },
+  More: {
+    screen: more,
     navigationOptions: {
       title: "More",
       tabBarIcon: (
         <Image
           style={{ width: 25, height: 25 }}
-          source={require('./src/Image/iconMore.png')}
+          source={require("./src/Image/iconMore.png")}
         />
       ),
       headerStyle: {
@@ -53,8 +60,8 @@ const TabNavigator = createBottomTabNavigator({
         fontSize: 30,
         color: "white"
       }
-      
-    }}
+    }
+  }
 });
 const AppStack = createSwitchNavigator({
   Auth: {
@@ -62,6 +69,6 @@ const AppStack = createSwitchNavigator({
   },
   Main: {
     screen: TabNavigator
-  }
+  },
 });
 export default createAppContainer(AppStack);
