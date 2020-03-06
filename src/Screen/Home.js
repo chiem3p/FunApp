@@ -1,30 +1,68 @@
 import React from "react";
-import { FlatList, ActivityIndicator, Text, View } from "react-native";
-
+import {
+  FlatList,
+  ActivityIndicator,
+  Text,
+  View,
+  TextInput,
+  ScrollView,
+  StyleSheet
+} from "react-native";
+import countryList from "../../country";
+import { TouchableOpacity } from "react-native-gesture-handler";
 export default class FetchExample extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = {
+      isLoading: false,
+      list: [],
+      city: {},
+      country: countryList,
+      data: countryList,
+      text: ""
+    };
   }
 
-  componentDidMount() {
-    return fetch("https://facebook.github.io/react-native/movies.json")
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState(
-          {
-            isLoading: false,
-            dataSource: responseJson.movies
-          },
-          function() {}
-        );
-      })
-      .catch(error => {
-        console.error(error);
-      });
+  setSearchText(event) {
+    let searchText = event.nativeEvent.text;
+    this.setState({ text: searchText });
+    let data = this.state.country;
+    searchText = searchText.trim().toLowerCase();
+    data = data.filter(item => {
+      return item.name.toLowerCase().match(searchText);
+    });
+    this.setState({
+      data: data
+    });
   }
+
+  componentDidMount() {}
+  onPressData = id => {
+    this.props.navigation.navigate("Weather_Detail", { id });
+    // this.setState({isLoading:true})
+    // try {
+    //   const response = await fetch(
+    //     `http://api.openweathermap.org/data/2.5/forecast?appid=b807789d6524ad85376b5961cc402be8&units=metric&id=${id}`
+    //   );
+    //   const responseJson = await response.json();
+    //   alert(JSON.stringify(responseJson));
+    //   if (responseJson) {
+    //     this.setState({
+    //       list: responseJson.list,
+    //       city: responseJson.city,
+    //       isLoading: false
+    //     });
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    //   this.setState({ isLoading: false });
+    //   alert("error");
+    // }
+  };
 
   render() {
+    console.log(countryList);
+    console.log(this.state.list);
     if (this.state.isLoading) {
       return (
         <View style={{ flex: 1, padding: 20 }}>
@@ -33,18 +71,53 @@ export default class FetchExample extends React.Component {
       );
     }
 
+    // get list weather
+    // return this.state.list.map(item => {
+    //   return item.weather.map(it=> {
+    //     return (
+    //       <View><Text>{it.main}</Text></View>
+    //     )
+    //   })
+    // });
     return (
-      <View style={{ flex: 1, paddingTop: 20 }}>
-        <FlatList
-          data={this.state.dataSource}
-          renderItem={({ item }) => (
-            <Text>
-              {item.title}, {item.releaseYear}
-            </Text>
-          )}
-          //   keyExtractor={({id}, index) => id}
+      <View
+        style={{
+          flex: 1,
+          padding: 20,
+          alignContent: "center",
+          alignItems: "center",
+          backgroundColor: "#ffbf00"
+        }}
+      >
+        <TextInput
+          placeholder="Please input ...."
+          style={{
+            width: 380,
+            height: 55,
+            fontSize: 19,
+            borderWidth: 1,
+            borderColor: "black",
+            paddingLeft: 10
+          }}
+          onChange={this.setSearchText.bind(this)}
         />
+        <ScrollView style={{ marginTop: 12, width: 300 }}>
+          {this.state.data.map(item => {
+            return (
+              <TouchableOpacity onPress={() => this.onPressData(item.id)}>
+                <Text style={{ fontSize: 20 }}>{item.name}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    backgroundColor: "#ffbf00"
+  }
+});

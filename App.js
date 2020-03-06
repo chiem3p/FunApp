@@ -15,8 +15,10 @@ import Friend from "./src/Screen/Friend";
 import More from "./src/Screen/More";
 import Account_Setting from "./src/Screen/Account_Setting";
 import MyProfile from "./src/Screen/My_Profile";
+import Weather_Detail from "./src/Screen/Weather_Detail";
 const HomePage = createStackNavigator({
-  Home: { screen: Home }
+  Home: { screen: Home },
+  Weather_Detail: { screen: Weather_Detail }
 });
 const friend = createStackNavigator({
   Friend: { screen: Friend }
@@ -69,6 +71,6 @@ const AppStack = createSwitchNavigator({
   },
   Main: {
     screen: TabNavigator
-  },
+  }
 });
 export default createAppContainer(AppStack);
